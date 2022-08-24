@@ -1,0 +1,22 @@
+.socials {
+	display: flex;
+	justify-content: center;
+	column-gap: 10px;
+	&__link {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		@include aligin-list;
+		justify-content: center;
+		color: #afb1bf;
+		transition: color var(--animation-mode), background-color var(--animation-mode);
+		&:hover,
+		&:focus {
+			background-color: var(--accent-text-color);
+			color: var(--title-second-color);
+		}
+	}
+	&__icon {
+		fill: currentColor;
+	}
+}

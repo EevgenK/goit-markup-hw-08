@@ -1,0 +1,110 @@
+.basement {
+	background-color: var(--bg-color);
+	padding-top: 60px;
+	padding-bottom: 60px;
+	&-addres {
+		margin-top: 20px;
+
+		&__title {
+			font-style: normal;
+			margin-bottom: 9px;
+			@include font(400, 14, 1.71, 0.03);
+			color: var(--title-second-color);
+		}
+	}
+	&-list {
+		font-style: normal;
+		@include font(400, 14, 1.71, 0.03);
+		color: var(--grey-contacts-color);
+	}
+	&-container {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-around;
+	}
+	&-mail-link {
+		display: inline-block;
+	}
+}
+
+.bs-contact {
+	margin-bottom: 9px;
+}
+
+/* join up */
+
+.footer__join {
+	margin-left: 70px;
+}
+
+.join__title {
+	@include font(700, 14, 1.14, 0.03);
+	text-transform: uppercase;
+	color: var(--title-second-color);
+	margin-bottom: 20px;
+}
+
+.socials__icon--color-white {
+	fill: var(--title-second-color);
+}
+.socials__link--color-grey {
+	background: rgba(255, 255, 255, 0.1);
+}
+/* sign-up form */
+
+.sign-label {
+	display: flex;
+	@include font(700, 14, 1.14, 0.03);
+	text-transform: uppercase;
+	color: var(--title-second-color);
+	margin-bottom: 20px;
+}
+
+.sign-input {
+	@include font(400, 14, 1.25, 0.03);
+	padding-left: 16px;
+	color: rgba(255, 255, 255, 0.6);
+	min-width: 358px;
+	height: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+	background-color: transparent;
+	&::placeholder {
+		@include font(400, 14, 1.25, 0.03);
+		@include aligin-list;
+
+		padding-bottom: 15px;
+		color: var(--grey-contacts-color);
+	}
+}
+
+.sign-btn {
+	font-family: inherit;
+	min-width: 200px;
+	height: 50px;
+	background: var(--accent-text-color);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	border-color: transparent;
+	@include font(700, 16, 1.88, 0.06);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 12px;
+	color: var(--title-second-color);
+	transition: background var(--animation-mode);
+	&:focus,
+	&:hover {
+		background: var(--btn-blue-color);
+	}
+}
+
+.sign-up {
+	display: flex;
+	margin-left: 93px;
+	&-icon {
+		fill: currentColor;
+		margin-left: 10px;
+	}
+}

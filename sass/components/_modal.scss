@@ -1,0 +1,209 @@
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	opacity: 1;
+	transition: opacity var(--animation-mode), visibility var(--animation-mode);
+	&.is-hidden {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		.modal {
+			transform: translate(-50%, -50%) scale(0.5) rotate(360deg);
+		}
+	}
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 528px;
+	min-height: 581px;
+	transform: translate(-50%, -50%) scale(1) rotate(0);
+	background-color: var(--title-second-color);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	transition: transform var(--animation-mode);
+	padding: 40px;
+	&-close {
+		fill: currentColor;
+		transition: color var(--animation-mode);
+	}
+}
+
+.modal-btn-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	@include aligin-list;
+	justify-content: center;
+	background: var(--title-second-color);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	&:hover > .modal-close,
+	&:focus > .modal-close {
+		color: var(--accent-text-color);
+	}
+}
+
+/* modal-form */
+
+.client-registranion {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.registration-title {
+	display: flex;
+	@include font(700, 20, 1.15, 0.03);
+	justify-content: center;
+	color: var(--title-text-color);
+	margin-bottom: 12px;
+}
+
+.form-field {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.reg-comment {
+	margin-bottom: 20px;
+}
+.form-textarea {
+	padding: 12px 16px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	outline: none;
+	transition: border-color var(--animation-mode);
+	cursor: pointer;
+	&:focus,
+	&:hover {
+		border-color: var(--accent-text-color);
+	}
+	&::placeholder {
+		@include font(400, 12, 1.17, 0.01);
+		color: rgba(117, 117, 117, 0.5);
+	}
+}
+
+.input-wrap {
+	position: relative;
+}
+
+.form-input {
+	width: 100%;
+	height: 40px;
+	padding-left: 42px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	cursor: pointer;
+	outline: none;
+	transition: border-color var(--animation-mode);
+	&:focus,
+	&:hover {
+		border-color: var(--accent-text-color);
+	}
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translateY(-50%);
+	transition: fill var(--animation-mode);
+	.form-input:focus + &,
+	.form-input:hover + & {
+		fill: var(--accent-text-color);
+	}
+}
+
+.form-label {
+	@include font(400, 12, 1.17, 0.01);
+	color: var(--primary-text-color);
+	margin-bottom: 4px;
+}
+
+.agreement-field {
+	display: flex;
+	justify-content: center;
+	@include font(400, 14, 2, 0.03);
+	// font-weight: 400;
+	// font-size: 14px;
+	// line-height: 2;
+	// letter-spacing: 0.03em;
+	color: var(--primary-text-color);
+	margin-bottom: 30px;
+}
+
+.label-checkbox {
+	@include aligin-list;
+	// display: flex;
+	// align-items: center;
+	cursor: pointer;
+	transition: color var(--animation-mode);
+	span {
+		justify-content: center;
+		border: 2px solid var(--title-text-color);
+		width: 16px;
+		height: 15px;
+		border-radius: 2px;
+		margin-right: 8.38px;
+		transition: boder-color var(--animation-mode);
+		.form-checkbox:focus + &,
+		.form-checkbox:hover + & {
+			border-color: var(--accent-text-color);
+		}
+		.form-checkbox:checked + & {
+			background-color: var(--accent-text-color);
+			border: none;
+		}
+	}
+	&:focus,
+	&:hover {
+		color: var(--accent-text-color);
+	}
+}
+
+.check-icon {
+	fill: transparent;
+	.form-checkbox:checked + .label-checkbox & {
+		fill: var(--title-second-color);
+	}
+}
+
+.agreement-link {
+	letter-spacing: 0.03em;
+	text-decoration-line: underline;
+	color: var(--accent-text-color);
+}
+
+.reg-btn {
+	font-family: inherit;
+	background: var(--accent-text-color);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	border-color: transparent;
+	min-width: 200px;
+	height: 50px;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+	display: block;
+	margin: auto;
+	align-items: center;
+	text-align: center;
+	letter-spacing: 0.06em;
+	color: var(--title-second-color);
+	transition: background var(--animation-mode);
+	&:focus,
+	&:hover {
+		background: var(--btn-blue-color);
+	}
+}
