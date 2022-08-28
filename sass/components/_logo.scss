@@ -3,8 +3,8 @@
 	font-family: "Raleway", sans-serif;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 26px;
-	line-height: 1.92;
+	font-size: 24px;
+	line-height: 1.17;
 	letter-spacing: 0.03em;
 	color: var(--title-text-color);
 	&--color-white {
@@ -16,10 +16,16 @@
 }
 
 .header__logo {
-	margin-right: 93px;
+	// margin-right: 88px;
+	margin-right: auto;
 	transition: color var(--animation-mode);
 	&:hover,
 	&:focus {
 		color: var(--accent-text-color);
+	}
+	@include desktop {
+		margin-right: 93px;
+		font-size: 26px;
+		line-height: 1.92;
 	}
 }

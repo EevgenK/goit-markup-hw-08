@@ -21,9 +21,27 @@
 		display: flex;
 		align-items: baseline;
 		justify-content: space-around;
+		flex-wrap: wrap;
+		text-align: center;
+		gap: 60px;
+		@include desktop {
+			gap: 0;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			text-align: start;
+		}
 	}
+
 	&-mail-link {
 		display: inline-block;
+	}
+}
+.footer-section {
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-basis: calc((100% - 60px) / 3);
+		// .join-soc {
+		// 	display: flex;
+		// }
 	}
 }
 
@@ -34,7 +52,11 @@
 /* join up */
 
 .footer__join {
-	margin-left: 70px;
+	// margin-left: 70px;
+	justify-content: end;
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-basis: calc((100% - 60px) / 3);
+	}
 }
 
 .join__title {
@@ -42,6 +64,7 @@
 	text-transform: uppercase;
 	color: var(--title-second-color);
 	margin-bottom: 20px;
+	display: inline-block;
 }
 
 .socials__icon--color-white {
@@ -58,22 +81,35 @@
 	text-transform: uppercase;
 	color: var(--title-second-color);
 	margin-bottom: 20px;
+	justify-content: center;
+	@include desktop {
+		justify-content: start;
+	}
 }
 
 .sign-input {
 	@include font(400, 14, 1.25, 0.03);
-	padding-left: 16px;
+	// padding-left: 16px;
+	display: flex;
+	margin-bottom: 20px;
 	color: rgba(255, 255, 255, 0.6);
-	min-width: 358px;
+	min-width: 300px;
 	height: 50px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
 	background-color: transparent;
+	@media screen and (min-width: 480px) and (max-width: 1199px) {
+		min-width: 450px;
+	}
+	@include desktop {
+		display: inline-flex;
+		width: 358px;
+	}
 	&::placeholder {
 		@include font(400, 14, 1.25, 0.03);
 		@include aligin-list;
-
+		padding-left: 16px;
 		padding-bottom: 15px;
 		color: var(--grey-contacts-color);
 	}
@@ -91,8 +127,10 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 12px;
 	color: var(--title-second-color);
+	@include desktop {
+		margin-left: 12px;
+	}
 	transition: background var(--animation-mode);
 	&:focus,
 	&:hover {
@@ -100,11 +138,12 @@
 	}
 }
 
-.sign-up {
-	display: flex;
-	margin-left: 93px;
-	&-icon {
-		fill: currentColor;
-		margin-left: 10px;
+.sign-up-icon {
+	fill: currentColor;
+	margin-left: 10px;
+}
+.sign-up-mail {
+	@include desktop {
+		flex-basis: calc((100% - 120px) / 3);
 	}
 }

@@ -20,14 +20,21 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 528px;
-	min-height: 581px;
+	width: 300px;
+	min-height: 609px;
 	transform: translate(-50%, -50%) scale(1) rotate(0);
 	background-color: var(--title-second-color);
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 	transition: transform var(--animation-mode);
 	padding: 40px;
+	@include mobile {
+		width: 450px;
+	}
+	@include desktop {
+		width: 528px;
+		min-height: 581px;
+	}
 	&-close {
 		fill: currentColor;
 		transition: color var(--animation-mode);
@@ -60,10 +67,14 @@
 
 .registration-title {
 	display: flex;
-	@include font(700, 20, 1.15, 0.03);
+	text-align: center;
+	@include font(700, 16, 1.15, 0.03);
 	justify-content: center;
 	color: var(--title-text-color);
 	margin-bottom: 12px;
+	@include mobile {
+		font-size: 20px;
+	}
 }
 
 .form-field {
@@ -132,13 +143,20 @@
 .agreement-field {
 	display: flex;
 	justify-content: center;
-	@include font(400, 14, 2, 0.03);
+	@include font(400, 11, 1.17, 0.03);
 	// font-weight: 400;
 	// font-size: 14px;
 	// line-height: 2;
 	// letter-spacing: 0.03em;
 	color: var(--primary-text-color);
 	margin-bottom: 30px;
+	@include mobile {
+		font-size: 12px;
+	}
+	@include desktop {
+		font-size: 14px;
+		line-height: 2;
+	}
 }
 
 .label-checkbox {
@@ -148,6 +166,7 @@
 	cursor: pointer;
 	transition: color var(--animation-mode);
 	span {
+		@include aligin-list;
 		justify-content: center;
 		border: 2px solid var(--title-text-color);
 		width: 16px;
