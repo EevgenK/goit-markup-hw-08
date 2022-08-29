@@ -104,11 +104,15 @@
 }
 .portfolio-article {
 	position: absolute;
-	width: 322px;
+	width: 220px;
 	height: 168px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	@include font(400, 18, 1.56, 0.03);
+	@include font(400, 14, 1.56, 0.03);
 	color: var(--title-second-color);
+	@include mobile {
+		width: 322px;
+		font-size: 18px;
+	}
 }

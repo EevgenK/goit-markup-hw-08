@@ -16,12 +16,14 @@
 }
 
 .header__logo {
-	// margin-right: 88px;
 	margin-right: auto;
 	transition: color var(--animation-mode);
 	&:hover,
 	&:focus {
 		color: var(--accent-text-color);
+	}
+	@include tablet {
+		margin-right: 88px;
 	}
 	@include desktop {
 		margin-right: 93px;

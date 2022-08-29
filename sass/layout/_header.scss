@@ -16,14 +16,12 @@
 .logo-div {
 	@include tablet {
 		display: flex;
-		flex-basis: calc((100% / 3));
 	}
 }
 
 .nav-div {
 	@include tablet {
 		display: flex;
-		flex-basis: calc((100% / 3));
 	}
 }
 
@@ -65,7 +63,7 @@
 .contacts {
 	@include tablet {
 		display: flex;
-		flex-basis: calc(100% / 3);
+		margin-left: auto;
 	}
 }
 .contact {
@@ -76,6 +74,7 @@
 		line-height: 1.14;
 	}
 	&__link {
+		display: flex;
 		transition: color var(--animation-mode);
 		&:hover,
 		&:focus {
@@ -110,7 +109,8 @@
 .menu-open {
 	margin-left: auto;
 	margin-top: 10px;
-
+	background: transparent;
+	border: none;
 	@include tablet {
 		visibility: hidden;
 		opacity: 0;
@@ -146,10 +146,16 @@
 	}
 }
 
+.menu-close {
+	background: transparent;
+	border: none;
+}
+
 .menu-btn-close {
 	position: absolute;
 	top: 10px;
 	right: 15px;
+
 	fill: var(--title-text-color);
 	transition: fill var(--animation-mode);
 	&:hover,
@@ -165,8 +171,12 @@
 	@include font(500, 40, 1.18, 0.02);
 	color: var(--title-text-color);
 	transition: color var(--animation-mode);
+
 	&:hover,
 	&:focus {
+		color: var(--accent-text-color);
+	}
+	&.current {
 		color: var(--accent-text-color);
 	}
 }
